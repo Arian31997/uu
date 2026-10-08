@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>404 — VELORA</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="bg-dots"></div>
+<div class="bg-glow"></div>
+<main>
+  <div class="container center" style="padding:90px 20px">
+    <h1 style="font-size:64px;margin:0;color:var(--pl)">404</h1>
+    <p class="muted" id="msg">صفحه‌ای که دنبالش بودید پیدا نشد.</p>
+    <a class="btn primary" href="index.html" id="home">بازگشت به خانه</a>
+  </div>
+</main>
+<script>
+  var fa = (localStorage.getItem('velora_lang') || 'fa') === 'fa';
+  if (fa) { document.getElementById('msg').textContent = 'صفحه‌ای که دنبالش بودید پیدا نشد.'; }
+  else {
+    document.getElementById('msg').textContent = 'The page you were looking for was not found.';
+    document.getElementById('home').textContent = 'Back to home';
+    document.documentElement.lang = 'en'; document.documentElement.dir = 'ltr';
+    document.body.classList.add('ltr');
+  }
+</script>
+</body>
+</html>

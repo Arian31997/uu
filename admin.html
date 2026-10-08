@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>VELORA — Admin</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%99%A0%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="admin-body">
+<div class="bg-dots"></div>
+<div class="bg-glow"></div>
+
+<!-- LOGIN -->
+<div class="admin-login-wrap" id="loginView">
+  <form class="auth-card admin-login" id="loginForm" novalidate>
+    <div class="logo center"><span class="logo-mark">&#9824;</span><span class="logo-text">velora<small>admin</small></span></div>
+    <h2 data-i18n="a_login">ورود مدیر</h2>
+    <p class="muted center" data-i18n="a_login_desc">این بخش فقط برای مدیر سیستم است</p>
+    <label><span data-i18n="f_email">ایمیل</span><input id="aEmail" type="email" dir="ltr" autocomplete="username"/></label>
+    <label><span data-i18n="f_pass">رمز عبور</span><input id="aPass" type="password" autocomplete="current-password"/></label>
+    <div class="err" id="aErr"></div>
+    <button class="btn primary full" type="submit" data-i18n="a_signin">ورود به پنل</button>
+    <p class="muted center mt"><a href="index.html">&larr; <span data-i18n="back_site">بازگشت به سایت</span></a></p>
+  </form>
+</div>
+
+<!-- PANEL -->
+<div id="panelView" class="hidden">
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo"><span class="logo-mark">&#9824;</span><span class="logo-text">velora<small>admin</small></span></div>
+      <div class="lang-switch" id="langSwitch" role="group">
+        <button data-lang="fa" class="active">&#127470;&#127478; فارسی</button>
+        <button data-lang="en">&#127464;&#127487; EN</button>
+      </div>
+      <div class="header-actions">
+        <span class="pill" id="adminEmail">—</span>
+        <a class="btn small ghost" href="index.html" data-i18n="back_site">بازگشت به سایت</a>
+        <button class="btn small ghost" id="logoutBtn" data-i18n="logout">خروج</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container admin-layout">
+    <aside class="side">
+      <button class="side-btn active" data-tab="dashboard"><span>&#128202;</span> <span data-i18n="a_dashboard">داشبورد</span></button>
+      <button class="side-btn" data-tab="tickets"><span>&#128172;</span> <span data-i18n="a_tickets">تیکت‌ها</span> <span class="badge" id="badgeTickets">0</span></button>
+      <button class="side-btn" data-tab="orders"><span>&#128230;</span> <span data-i18n="a_orders">سفارش‌ها</span> <span class="badge" id="badgeOrders">0</span></button>
+      <button class="side-btn" data-tab="products"><span>&#127873;</span> <span data-i18n="a_items">مدیریت آیتم‌ها</span></button>
+      <button class="side-btn" data-tab="users"><span>&#128101;</span> <span data-i18n="a_users">کاربران</span></button>
+      <button class="side-btn" data-tab="settings"><span>&#9881;</span> <span data-i18n="a_settings">تنظیمات</span></button>
+    </aside>
+
+    <div class="dash-main">
+      <!-- DASHBOARD -->
+      <section class="apane active" id="pane-dashboard">
+        <div class="grid3" id="statCards"></div>
+        <div class="card"><h3 data-i18n="a_recent_orders">آخرین سفارش‌ها</h3><div id="recentOrders"></div></div>
+        <div class="card"><h3 data-i18n="a_recent_tickets">آخرین تیکت‌ها</h3><div id="recentTickets"></div></div>
+      </section>
+
+      <!-- TICKETS -->
+      <section class="apane" id="pane-tickets">
+        <div class="card">
+          <div class="store-head">
+            <h3 data-i18n="a_tickets">تیکت‌ها</h3>
+            <select id="tFilter">
+              <option value="all" data-i18n="all">همه</option>
+              <option value="open" data-i18n="t_st_open">باز</option>
+              <option value="pending" data-i18n="t_st_pending">در انتظار</option>
+              <option value="closed" data-i18n="t_st_closed">بسته</option>
+            </select>
+          </div>
+          <div id="adminTicketList"></div>
+        </div>
+        <div class="card hidden" id="ticketDetail"></div>
+      </section>
+
+      <!-- ORDERS -->
+      <section class="apane" id="pane-orders">
+        <div class="card">
+          <div class="store-head">
+            <h3 data-i18n="a_orders">سفارش‌ها</h3>
+            <select id="oFilter">
+              <option value="all" data-i18n="all">همه</option>
+              <option value="paid" data-i18n="t_st_paid">پرداخت‌شده</option>
+              <option value="processing" data-i18n="t_st_processing">در حال پردازش</option>
+              <option value="completed" data-i18n="t_st_completed">تکمیل‌شده</option>
+              <option value="cancelled" data-i18n="t_st_cancelled">لغو شده</option>
+              <option value="refunded" data-i18n="t_st_refunded">بازپرداخت‌شده</option>
+            </select>
+          </div>
+          <div id="adminOrderList"></div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="apane" id="pane-products">
+        <div class="card">
+          <div class="store-head">
+            <h3 data-i18n="a_add_item">افزودن آیتم جدید</h3>
+          </div>
+          <form id="productForm" novalidate>
+            <div class="row2">
+              <label><span data-i18n="a_item_name">نام آیتم</span><input id="pfName" maxlength="80"/></label>
+              <label><span data-i18n="a_item_cat">دسته</span>
+                <select id="pfCat">
+                  <option value="plate" data-i18n="cat_plate">پلاک</option>
+                  <option value="phone" data-i18n="cat_phone">شماره تلفن</option>
+                  <option value="other" data-i18n="cat_other">سایر</option>
+                </select>
+              </label>
+            </div>
+            <label><span data-i18n="a_item_desc">توضیحات</span><textarea id="pfDesc" rows="3" maxlength="500"></textarea></label>
+            <div class="row3">
+              <label><span data-i18n="t_price">قیمت</span><input id="pfPrice" type="number" min="1" max="100000000"/></label>
+              <label><span data-i18n="t_stock">موجودی</span><input id="pfStock" type="number" min="0" max="100000" value="1"/></label>
+              <label><span data-i18n="t_rarity">کمیابی</span>
+                <select id="pfRare">
+                  <option>COMMON</option><option>RARE</option><option>EPIC</option><option>LEGENDARY</option>
+                </select>
+              </label>
+            </div>
+            <label><span data-i18n="a_item_image">تصویر آیتم (اختیاری)</span>
+              <input type="file" id="pfImage" accept="image/png,image/jpeg,image/webp"/>
+            </label>
+            <p class="muted" data-i18n="img_hint">PNG/JPG/WebP، حداکثر ۵۱۲ کیلوبایت. بدون تصویر، نمایش نئونی پیش‌فرض استفاده می‌شود.</p>
+            <div class="err" id="pfErr"></div>
+            <button class="btn primary" type="submit" data-i18n="a_save_item">ثبت آیتم</button>
+            <button class="btn ghost hidden" type="button" id="pfCancel" data-i18n="cancel">انصراف</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3 data-i18n="a_items">مدیریت آیتم‌ها</h3>
+          <div id="adminProductList"></div>
+        </div>
+      </section>
+
+      <!-- USERS -->
+      <section class="apane" id="pane-users">
+        <div class="card">
+          <h3 data-i18n="a_users">کاربران</h3>
+          <div id="adminUserList"></div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="apane" id="pane-settings">
+        <div class="card">
+          <h3 data-i18n="a_change_admin_email">تغییر ایمیل مدیر</h3>
+          <label><span data-i18n="f_email">ایمیل</span><input id="stEmail" dir="ltr"/></label>
+          <div class="err" id="stErr"></div>
+          <button class="btn primary" id="stEmailSave" data-i18n="save">ذخیره تغییرات</button>
+        </div>
+        <div class="card">
+          <h3 data-i18n="change_pass">تغییر رمز عبور مدیر</h3>
+          <p class="muted" data-i18n="st_pass_hint">پس از تغییر رمز، همه نشست‌های مدیر دیگر باطل می‌شوند.</p>
+          <label><span data-i18n="current_pass">رمز فعلی</span><input id="stCur" type="password" autocomplete="current-password"/></label>
+          <label><span data-i18n="new_pass">رمز جدید</span><input id="stNew" type="password" autocomplete="new-password"/></label>
+          <div class="err" id="spErr"></div>
+          <button class="btn primary" id="stPassSave" data-i18n="update">به‌روزرسانی</button>
+        </div>
+        <div class="card">
+          <h3 data-i18n="a_session">نشست فعلی</h3>
+          <p class="muted" id="sessionInfo"></p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+<script src="i18n.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
