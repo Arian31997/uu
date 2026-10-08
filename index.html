@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ولورا | رول‌پلی، بهتر از همیشه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="bg-dots"></div>
+<div class="bg-glow"></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="logo" href="#/home">
+      <span class="logo-mark">♠</span>
+      <span class="logo-text">velora<small>ولورا</small></span>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="#/home" data-nav="home" class="active">خانه</a>
+      <a href="#/shop" data-nav="shop">فروشگاه</a>
+      <a href="#/team" data-nav="team">تیم</a>
+      <a href="#/blog" data-nav="blog">وبلاگ</a>
+      <a href="#/streamers" data-nav="streamers">استریمرها</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="notifBtn" title="اعلان‌ها">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        <span class="dot hidden" id="notifDot"></span>
+      </button>
+      <button class="icon-btn avatar-btn" id="avatarBtn" title="حساب">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-5 0-8 2.5-8 6v1h16v-1c0-3.5-3-6-8-6z"/></svg>
+      </button>
+      <button class="hamburger" id="menuBtn">☰</button>
+    </div>
+  </div>
+  <div class="notif-panel hidden" id="notifPanel"></div>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">رول‌پلی، بهتر از همیشه</h1>
+      <p class="hero-sub">اینجا هر تصمیم پیامد دارد؛ با تمرکز روی نظم، واقع‌گرایی و کیفیت، تجربه‌ای ساخته شده که<br/>از اصول رول‌پلی فاصله نمی‌گیرد</p>
+      <div class="hero-btns">
+        <button class="btn primary" data-go="#/shop">خرید اشتراک</button>
+        <button class="btn ghost" id="enterCityBtn"><span>↖</span> ورود به شهر</button>
+      </div>
+    </div>
+    <div class="hero-status">
+      <span class="pill"><i class="pulse"></i> وایت‌لیست <b id="wlCount">۴۱/۱۲۰</b></span>
+      <span class="pill"><i class="pulse"></i> Dev <b>۳/۳۲</b></span>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="sec-title"><span class="accent">VELORA</span> آموزش ورود به ولورا</h2>
+    <div class="grid2">
+      <div class="card tutorial">
+        <div class="t-badge">قدم اول</div>
+        <div class="t-icon v">V</div>
+        <h3>نصب موارد موردنیاز</h3>
+        <p>از سایت VMP کلاینت VMP و GTA را دانلود و نصب کنید.</p>
+        <button class="btn small ghost">↗ دانلود</button>
+      </div>
+      <div class="card tutorial">
+        <div class="t-badge">قدم دوم</div>
+        <div class="t-icon spade">♠</div>
+        <h3>ثبت نام</h3>
+        <p>در سایت VELORA ثبت نام کنید</p>
+        <button class="btn small ghost" data-go="#/auth">ورود / ثبت‌نام</button>
+      </div>
+    </div>
+
+    <h2 class="sec-title">اشتراک <span class="mini-badge">قدم سوم</span></h2>
+    <div class="subs">
+      <div class="sub-card"><h4>برنز</h4><div class="price">۱۹۹ <small>تومان / ۵ روز</small></div></div>
+      <div class="sub-card"><h4>نقره‌ای</h4><div class="price">۳۹۹ <small>تومان / ۱۰ روز</small></div></div>
+      <div class="sub-card gold"><h4>طلایی</h4><div class="price">۶۹۹ <small>تومان / ۲۵ روز</small></div></div>
+      <div class="sub-card"><h4>پلاتینیوم</h4><div class="price">۱۲۹۹ <small>تومان / ۶۰ روز</small></div></div>
+      <div class="sub-card danger"><h4>بولت</h4><div class="price">۳۰۰ <small>تومان</small></div></div>
+      <div class="sub-card buy-card"><h4>اشتراک</h4><button class="btn small ghost" data-go="#/shop">خرید اشتراک</button></div>
+    </div>
+
+    <div class="card center-card">
+      <div class="mini-badge">قدم چهارم</div>
+      <h3>ورود به سرور</h3>
+      <p class="muted">وارد فایوم شوید و عضوی از سرور ولورا باشید</p>
+      <button class="btn small ghost" data-go="#/dashboard">مشاهده</button>
+      <div class="mock">
+        <div class="mock-top"><span class="logo-mark sm">♠</span><div class="mock-nav"><i></i><i></i><i></i><i></i></div></div>
+        <div class="mock-body">
+          <div class="mock-side">Alen Wolfe<br/><small>Whitelist ۰۰:۴۲:۲۳۴</small></div>
+          <div class="mock-cards"><div class="mock-c"><b>Whitelist</b><span class="online"></span></div><div class="mock-c"><b>Public</b><span class="online y"></span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sec-title">ویژگی‌های <span class="accent">VELORA</span></h2>
+    <div class="grid3" id="features">
+      <div class="card"><div class="f-ico">🛡️</div><h4>آنتی‌چیت اختصاصی</h4><p class="muted">محافظت لحظه‌ای از اقتصاد و رفتار سرور</p></div>
+      <div class="card"><div class="f-ico">⚡</div><h4>پینگ پایدار</h4><p class="muted">زیرساخت ایران + اروپا با سینک بالا</p></div>
+      <div class="card"><div class="f-ico">🎭</div><h4>رول‌پلی جدی</h4><p class="muted">استوری اختصاصی، جاب‌های واقعی، پلیس فعال</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="page" id="page-shop">
+  <div class="container shop-layout">
+    <div class="shop-main">
+      <div class="featured" id="featuredRow"></div>
+      <div class="shop-head">
+        <h2>همه محصولات</h2>
+        <select id="sortSel"><option value="new">پیش‌فرض</option><option value="cheap">ارزان‌ترین</option><option value="exp">گران‌ترین</option></select>
+      </div>
+      <div class="products" id="productGrid"></div>
+      <div class="card add-card">
+        <h3>➕ افزودن آیتم جدید</h3>
+        <p class="muted">فقط کاربران واردشده می‌توانند آیتم اضافه کنند. اگر وارد نیستید به صفحه ساخت اکانت منتقل می‌شوید.</p>
+        <button class="btn primary" id="openAddBtn">افزودن آیتم</button>
+      </div>
+    </div>
+    <aside class="filters">
+      <div class="f-head"><b>فیلترها (<span id="filterCount">۰</span>)</b><button class="btn small ghost" id="clearFilters">حذف فیلتر</button></div>
+      <div class="search"><input id="searchInp" placeholder="جستجو محصول"/><span>🔍</span></div>
+      <h4>دسته‌بندی</h4>
+      <label class="radio"><input type="radio" name="cat" value="all" checked/> همه</label>
+      <label class="radio"><input type="radio" name="cat" value="plate"/> پلاک</label>
+      <label class="radio"><input type="radio" name="cat" value="phone"/> شماره تلفن</label>
+      <h4>قیمت (تومان)</h4>
+      <label class="check"><input type="checkbox" class="priceF" value="0-100"/> زیر ۱۰۰</label>
+      <label class="check"><input type="checkbox" class="priceF" value="100-200"/> ۱۰۰ – ۲۰۰</label>
+      <label class="check"><input type="checkbox" class="priceF" value="200-100000"/> ۲۰۰ – ۳۰۰</label>
+    </aside>
+  </div>
+</section>
+
+<!-- AUTH -->
+<section class="page" id="page-auth">
+  <div class="auth-wrap">
+    <div class="auth-blur"></div>
+    <div class="auth-card">
+      <div class="tabs"><button class="tab active" data-tab="register">ثبت نام</button><button class="tab" data-tab="login">ورود</button></div>
+      <h2 id="authTitle">ثبت نام</h2>
+      <p class="muted">وارد حساب کاربری خود شوید</p>
+      <form id="registerForm" novalidate>
+        <label>نام کاربری<input id="rUser" placeholder="arian-rra" autocomplete="username"/></label>
+        <label>شماره موبایل<input id="rPhone" placeholder="۰۹۰۰۰۰۰۰۲۳۴" inputmode="numeric"/></label>
+        <label>ایمیل<input id="rEmail" placeholder="name@email.com" dir="ltr"/></label>
+        <div class="row2">
+          <label>رمز<input id="rPass" type="password" placeholder="••••••"/></label>
+          <label>تکرار رمز<input id="rPass2" type="password" placeholder="••••••"/></label>
+        </div>
+        <div class="err" id="rErr"></div>
+        <button class="btn primary full" type="submit">ساخت حساب کاربری</button>
+      </form>
+      <form id="loginForm" class="hidden" novalidate>
+        <label>نام کاربری یا ایمیل<input id="lUser" placeholder="arian-rra"/></label>
+        <label>رمز عبور<input id="lPass" type="password" placeholder="••••••"/></label>
+        <div class="err" id="lErr"></div>
+        <button class="btn primary full" type="submit">ورود به حساب</button>
+      </form>
+      <div class="or">یا</div>
+      <div class="social"><button class="btn ghost" type="button">G</button><button class="btn ghost" type="button">★</button></div>
+      <p class="muted center">حساب کاربری دارید؟ <a href="#/auth" id="swapToLogin">ورود</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="page" id="page-dashboard">
+  <div class="container dash-layout">
+    <aside class="side">
+      <div class="me"><div class="avatar-lg" id="meAvatar">V</div><div><b id="meName">مهمان</b><small id="meRole">بدون سایت</small></div></div>
+      <button class="side-btn active" data-dash="servers">🖥 سرورها</button>
+      <button class="side-btn" data-dash="support">💬 پشتیبانی</button>
+      <button class="side-btn" data-dash="app">📦 اپلیکیشن</button>
+      <button class="side-btn" data-dash="settings">⚙ تنظیمات</button>
+      <button class="side-btn danger" id="logoutBtn">⏻ خروج از حساب</button>
+    </aside>
+    <div class="dash-main">
+      <div class="dash-pane active" id="dash-servers">
+        <div class="card"><h3>ورود به سرور</h3><p class="muted">برای ورود به سرور یکی را انتخاب کنید</p></div>
+        <div class="grid2">
+          <div class="card"><h3>وایت‌لیست <i class="online"></i></h3><p class="muted">بازیکنان ۴۳/۱۲۰ — معمول</p><button class="btn primary full queueBtn">ورود به صف</button></div>
+          <div class="card"><h3>Dev <i class="online"></i></h3><p class="muted">بازیکنان ۲/۳۲ — معمول</p><button class="btn primary full queueBtn">ورود به صف</button></div>
+        </div>
+        <div class="card"><h3>خریدهای من</h3><div id="myOrders" class="muted">هنوز خریدی ثبت نشده.</div></div>
+      </div>
+      <div class="dash-pane" id="dash-support"><div class="card"><h3>پشتیبانی</h3><p class="muted">تیکت جدید ثبت کنید.</p><input id="ticketSub" placeholder="موضوع تیکت"/><textarea id="ticketMsg" placeholder="متن پیام"></textarea><button class="btn primary" id="ticketBtn">ارسال تیکت</button><div id="ticketList"></div></div></div>
+      <div class="dash-pane" id="dash-app"><div class="card"><h3>اپلیکیشن ولورا</h3><p class="muted">به‌زودی برای ویندوز و موبایل.</p></div></div>
+      <div class="dash-pane" id="dash-settings">
+        <div class="card"><h3>شما اشتراک فعالی ندارید</h3><p class="muted">برای خرید اشتراک می‌توانید به صفحه فروشگاه مراجعه کنید</p><button class="btn primary" data-go="#/shop">فروشگاه</button></div>
+        <div class="grid2">
+          <div class="card"><h4>عکس پروفایل</h4><input type="file" id="avatarInp" accept="image/*"/><button class="btn small primary" id="avatarSave">آپلود</button></div>
+          <div class="card"><h4>پروفایل</h4><p class="muted">تنظیمات پروفایل خود را مدیریت کنید</p></div>
+          <div class="card"><h4>⟨⟩ دیسکورد</h4><p class="muted">پروفایل شما به دیسکورد لینک نمی‌باشد</p><button class="btn small ghost linkBtn">لینک</button></div>
+          <div class="card"><h4>⦿ استیم</h4><p class="muted">پروفایل شما به استیم لینک نمی‌باشد</p><button class="btn small ghost linkBtn">لینک</button></div>
+        </div>
+        <div class="card"><button class="btn small ghost" id="toggleInfo">◉ نمایش اطلاعات حساب</button><pre id="accInfo" class="hidden"></pre></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-team"><div class="container"><h2 class="sec-title">تیم ولورا</h2><div class="grid3"><div class="card"><h4>👑 بنیان‌گذار</h4><p class="muted">مدیریت ارشد سرور</p></div><div class="card"><h4>🛠️ توسعه‌دهنده</h4><p class="muted">اسکریپت و زیرساخت</p></div><div class="card"><h4>🎧 پشتیبانی</h4><p class="muted">پاسخگویی ۲۴/۷</p></div></div></div></section>
+<section class="page" id="page-blog"><div class="container"><h2 class="sec-title">وبلاگ</h2><div class="card"><h4>آپدیت جدید ولورا منتشر شد</h4><p class="muted">سیستم اقتصادی جدید، شغل‌های تازه و ایونت هفتگی.</p></div></div></section>
+<section class="page" id="page-streamers"><div class="container"><h2 class="sec-title">استریمرها</h2><div class="card"><p class="muted">به‌زودی لیست استریمرهای رسمی ولورا اینجا قرار می‌گیرد.</p></div></div></section>
+</main>
+
+<!-- ADD MODAL -->
+<div class="modal hidden" id="addModal">
+  <div class="modal-card">
+    <h3>افزودن آیتم جدید</h3>
+    <label>عنوان (انگلیسی)<input id="nTitle" placeholder="Vehicle Plate"/></label>
+    <label>مقدار / شماره<input id="nValue" placeholder="TURK / 9123333444"/></label>
+    <label>دسته<select id="nCat"><option value="plate">پلاک</option><option value="phone">شماره تلفن</option></select></label>
+    <label>قیمت (تومان)<input id="nPrice" type="number" min="1" placeholder="1000"/></label>
+    <label>کمیابی<select id="nRare"><option>LEGENDARY</option><option>EPIC</option><option>RARE</option></select></label>
+    <div class="err" id="nErr"></div>
+    <div class="row"><button class="btn ghost" id="addCancel">انصراف</button><button class="btn primary" id="addSave">ثبت آیتم</button></div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+<footer><p>© 2026 VELORA — ولورا · همه حقوق محفوظ است</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
